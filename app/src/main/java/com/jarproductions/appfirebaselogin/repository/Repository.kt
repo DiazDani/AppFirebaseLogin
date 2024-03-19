@@ -7,7 +7,9 @@ import com.google.firebase.firestore.FirebaseFirestore
 
 class Repository {
     companion object {
+
         val db = FirebaseFirestore.getInstance()
+
         private fun showAlert(context: Context) {
             val builder = AlertDialog.Builder(context)
             builder.setTitle("Error")
@@ -46,6 +48,9 @@ class Repository {
 
         fun logout() {
             FirebaseAuth.getInstance().signOut()
+        }
+        fun updateUserInfo(name: String, email: String){
+
         }
 
     }

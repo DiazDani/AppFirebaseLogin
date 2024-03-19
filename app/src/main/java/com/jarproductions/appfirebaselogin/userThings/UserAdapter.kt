@@ -3,11 +3,8 @@ package com.jarproductions.appfirebaselogin.userThings
 import android.content.Intent
 import android.content.Context
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.jarproductions.appfirebaselogin.R
 import com.jarproductions.appfirebaselogin.databinding.UserItemBinding
 import com.jarproductions.appfirebaselogin.home.HomeActivity
 
@@ -27,7 +24,8 @@ class UserAdapter(private val userList: List<User>, private val context: Context
 
         holder.itemView.setOnClickListener {
             val intent = Intent(context, HomeActivity::class.java)
-
+            intent.putExtra("user_name", user.name)
+            intent.putExtra("user_email", user.email)
             context.startActivity(intent)
         }
     }
