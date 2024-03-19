@@ -4,11 +4,8 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.activity.viewModels
-import androidx.appcompat.app.AlertDialog
-import com.google.firebase.auth.FirebaseAuth
-import com.jarproductions.appfirebaselogin.R
+import com.jarproductions.appfirebaselogin.UserList.UserListActivity
 import com.jarproductions.appfirebaselogin.databinding.ActivityAuthBinding
-import com.jarproductions.appfirebaselogin.home.HomeActivity
 import com.jarproductions.appfirebaselogin.register.RegisterActivity
 
 class AuthActivity : AppCompatActivity() {
@@ -32,7 +29,7 @@ class AuthActivity : AppCompatActivity() {
                 && binding.editTextTextPassword.text.isNotEmpty()
             ){
                 viewModel.logUser(binding.editTextTextEmailAddress.text.toString(),binding.editTextTextPassword.text.toString(),this)
-                val intent = Intent(this, HomeActivity::class.java)
+                val intent = Intent(this, UserListActivity::class.java)
                 startActivity(intent)
             }
         }

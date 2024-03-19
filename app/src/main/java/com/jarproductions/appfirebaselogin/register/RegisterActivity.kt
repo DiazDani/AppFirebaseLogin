@@ -23,10 +23,12 @@ class RegisterActivity : AppCompatActivity() {
         binding.button2.setOnClickListener {
             if (binding.editTextTextEmailAddress.text.isNotEmpty()
                 && binding.editTextTextPassword.text.isNotEmpty()
+                && binding.editTextText.text.isNotEmpty()
             ) {
                 viewModel.newUser(
+
                     binding.editTextTextEmailAddress.text.toString(),
-                    binding.editTextTextPassword.text.toString(),this
+                    binding.editTextTextPassword.text.toString(),binding.editTextText.text.toString(),this
                 )
                 val intent = Intent(this, AuthActivity::class.java)
                 startActivity(intent)
