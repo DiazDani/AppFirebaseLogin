@@ -4,7 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.activity.viewModels
-import com.jarproductions.appfirebaselogin.UserList.UserListActivity
+import com.jarproductions.appfirebaselogin.userList.UserListActivity
 import com.jarproductions.appfirebaselogin.databinding.ActivityAuthBinding
 import com.jarproductions.appfirebaselogin.register.RegisterActivity
 

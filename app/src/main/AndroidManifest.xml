@@ -13,7 +13,7 @@
         android:theme="@style/Theme.AppFirebaseLogin"
         tools:targetApi="31" >
         <activity
-            android:name=".UserList.UserListActivity"
+            android:name=".userList.UserListActivity"
             android:exported="false" />
         <activity
             android:name=".register.RegisterActivity"
