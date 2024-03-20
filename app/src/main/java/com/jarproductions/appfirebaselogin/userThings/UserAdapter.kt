@@ -26,6 +26,7 @@ class UserAdapter(private val userList: List<User>, private val context: Context
             val intent = Intent(context, HomeActivity::class.java)
             intent.putExtra("user_name", user.name)
             intent.putExtra("user_email", user.email)
+            intent.putExtra("user_age",user.age)
             context.startActivity(intent)
         }
 

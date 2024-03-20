@@ -9,4 +9,5 @@
     <string name="go_back">GO BACK</string>
     <string name="update_info">UPDATE INFO</string>
     <string name="delete_user">DELETE USER</string>
+    <string name="age">Age</string>
 </resources>

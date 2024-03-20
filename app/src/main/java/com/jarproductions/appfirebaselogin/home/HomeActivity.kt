@@ -16,9 +16,11 @@ class HomeActivity : AppCompatActivity() {
 
         val userName = intent.getStringExtra("user_name")
         val userEmail = intent.getStringExtra("user_email")
+        val userAge=intent.getStringExtra("user_age")
 
-        binding.editTextTextEmailAddress2.setText(userEmail)
+        binding.editTextTextEmailAddress2.text = userEmail
         binding.editTextText2.setText(userName)
+        binding.editTextText3.setText(userAge)
 
         setContentView(binding.root)
         setup(userEmail.toString())
@@ -30,12 +32,12 @@ class HomeActivity : AppCompatActivity() {
             startActivity(intent)
         }
         binding.buttonUpdate.setOnClickListener{
-            viewModel.updateUserInfo(binding.editTextText2.text.toString(),binding.editTextTextEmailAddress2.text.toString(),email)
+            viewModel.updateUserInfo(binding.editTextText2.text.toString(),binding.editTextTextEmailAddress2.text.toString(),binding.editTextText3.text.toString(),email)
             val intent = Intent(this, UserListActivity::class.java)
             startActivity(intent)
         }
         binding.buttonDelete.setOnClickListener{
-            viewModel.deleteUser(email,this)
+            viewModel.deleteUser(email)
             val intent = Intent(this, UserListActivity::class.java)
             startActivity(intent)
         }

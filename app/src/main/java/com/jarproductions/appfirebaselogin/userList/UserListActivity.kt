@@ -42,7 +42,8 @@ class UserListActivity : AppCompatActivity() {
                 for (document in result) {
                     val name = document.getString("name") ?: ""
                     val email = document.getString("email") ?: ""
-                    val user = User(name, email)
+                    val age = document.getString("age")?: ""
+                    val user = User(name, email,age)
                     userList.add(user)
                 }
                 userAdapter.notifyDataSetChanged()
