@@ -21,16 +21,21 @@ class HomeActivity : AppCompatActivity() {
         binding.editTextText2.setText(userName)
 
         setContentView(binding.root)
-        setup(userName.toString(), userEmail.toString())
+        setup(userEmail.toString())
     }
 
-    private fun setup(name:String,email:String){
+    private fun setup(email:String){
         binding.button.setOnClickListener{
             val intent = Intent(this, UserListActivity::class.java)
             startActivity(intent)
         }
         binding.buttonUpdate.setOnClickListener{
-            viewModel.updateUserInfo(name,email)
+            viewModel.updateUserInfo(binding.editTextText2.text.toString(),binding.editTextTextEmailAddress2.text.toString(),email)
+            val intent = Intent(this, UserListActivity::class.java)
+            startActivity(intent)
+        }
+        binding.buttonDelete.setOnClickListener{
+            viewModel.deleteUser(email,this)
             val intent = Intent(this, UserListActivity::class.java)
             startActivity(intent)
         }

@@ -28,6 +28,7 @@ class UserAdapter(private val userList: List<User>, private val context: Context
             intent.putExtra("user_email", user.email)
             context.startActivity(intent)
         }
+
     }
 
     override fun getItemCount(): Int {
