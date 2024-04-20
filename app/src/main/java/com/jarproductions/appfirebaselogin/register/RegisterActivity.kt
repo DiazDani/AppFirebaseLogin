@@ -30,8 +30,6 @@ class RegisterActivity : AppCompatActivity() {
                     binding.editTextTextEmailAddress.text.toString(),
                     binding.editTextTextPassword.text.toString(),binding.editTextText.text.toString(),this
                 )
-                val intent = Intent(this, AuthActivity::class.java)
-                startActivity(intent)
             }
 
 

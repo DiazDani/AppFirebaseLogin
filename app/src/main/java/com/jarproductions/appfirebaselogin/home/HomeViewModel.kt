@@ -8,8 +8,8 @@ class HomeViewModel: ViewModel() {
     fun checkMail(mail:String, context: Context){
         Repository.checkAccount4Password(mail,context)
     }
-    fun updateUserInfo(name: String, email: String,age:String,id:String) {
-        Repository.updateUserInfo(name, email,age,id)
+    fun updateUserInfo(name: String, email: String,age:String,id:String,context: Context) {
+        Repository.updateUserInfo(name, email,age,id,context)
     }
     fun deleteUser(email: String, context: Context){
         Repository.deleteAccount(email,context)

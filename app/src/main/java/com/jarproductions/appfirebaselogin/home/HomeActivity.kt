@@ -30,18 +30,15 @@ class HomeActivity : AppCompatActivity() {
 
     private fun setup(email:String,context: Context){
         binding.button.setOnClickListener{
-            val intent = Intent(this, UserListActivity::class.java)
+            val intent = Intent(context, UserListActivity::class.java)
             startActivity(intent)
         }
         binding.buttonUpdate.setOnClickListener{
-            viewModel.updateUserInfo(binding.editTextText2.text.toString(),binding.editTextTextEmailAddress2.text.toString(),binding.editTextText3.text.toString(),email)
-            val intent = Intent(this, UserListActivity::class.java)
-            startActivity(intent)
+            viewModel.updateUserInfo(binding.editTextText2.text.toString(),binding.editTextTextEmailAddress2.text.toString(),binding.editTextText3.text.toString(),email,context)
+
         }
         binding.buttonDelete.setOnClickListener{
             viewModel.deleteUser(email,context)
-            val intent = Intent(this, UserListActivity::class.java)
-            startActivity(intent)
         }
 
         binding.changePassword.setOnClickListener {
