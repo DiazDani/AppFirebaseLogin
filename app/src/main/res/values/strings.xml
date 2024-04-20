@@ -10,4 +10,8 @@
     <string name="update_info">UPDATE INFO</string>
     <string name="delete_user">DELETE USER</string>
     <string name="age">Age</string>
+    <string name="confirm_password">Confirm password</string>
+    <string name="new_password">New Password</string>
+    <string name="old_password">Old Password</string>
+    <string name="change_password">Change Password</string>
 </resources>

@@ -3,6 +3,7 @@ package com.jarproductions.appfirebaselogin.login
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import androidx.activity.viewModels
 import com.jarproductions.appfirebaselogin.userList.UserListActivity
 import com.jarproductions.appfirebaselogin.databinding.ActivityAuthBinding
@@ -24,15 +25,20 @@ class AuthActivity : AppCompatActivity() {
     private fun setup() {
         title = "autenticación"
 
-        binding.button.setOnClickListener{
+        binding.button.setOnClickListener {
             if (binding.editTextTextEmailAddress.text.isNotEmpty()
                 && binding.editTextTextPassword.text.isNotEmpty()
-            ){
-                viewModel.logUser(binding.editTextTextEmailAddress.text.toString(),binding.editTextTextPassword.text.toString(),this)
-                val intent = Intent(this, UserListActivity::class.java)
-                startActivity(intent)
+            ) {
+                viewModel.logUser(
+                    binding.editTextTextEmailAddress.text.toString(),
+                    binding.editTextTextPassword.text.toString(),
+                    this
+                )
+            } else {
+                Toast.makeText(this, "Introdueix un correu electrònic i una contrasenya", Toast.LENGTH_SHORT).show()
             }
         }
+
 
         binding.button2.setOnClickListener {
             val intent = Intent(this, RegisterActivity::class.java)

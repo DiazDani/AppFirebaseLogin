@@ -1,9 +1,11 @@
 package com.jarproductions.appfirebaselogin.home
 
+import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.activity.viewModels
+import com.jarproductions.appfirebaselogin.changePassword.ChangePasswordActivity
 import com.jarproductions.appfirebaselogin.databinding.ActivityHomeBinding
 import com.jarproductions.appfirebaselogin.userList.UserListActivity
 
@@ -23,10 +25,10 @@ class HomeActivity : AppCompatActivity() {
         binding.editTextText3.setText(userAge)
 
         setContentView(binding.root)
-        setup(userEmail.toString())
+        setup(userEmail.toString(),this)
     }
 
-    private fun setup(email:String){
+    private fun setup(email:String,context: Context){
         binding.button.setOnClickListener{
             val intent = Intent(this, UserListActivity::class.java)
             startActivity(intent)
@@ -37,9 +39,15 @@ class HomeActivity : AppCompatActivity() {
             startActivity(intent)
         }
         binding.buttonDelete.setOnClickListener{
-            viewModel.deleteUser(email)
+            viewModel.deleteUser(email,context)
             val intent = Intent(this, UserListActivity::class.java)
             startActivity(intent)
         }
+
+        binding.changePassword.setOnClickListener {
+
+            viewModel.checkMail(email,context)
+        }
+
     }
 }
