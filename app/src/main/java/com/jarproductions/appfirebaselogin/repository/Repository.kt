@@ -95,11 +95,9 @@ class Repository {
                 currentUser.delete()
                     .addOnCompleteListener { task ->
                         if (task.isSuccessful) {
-                            // Elimina la cuenta de Firestore
                             db.collection("clients").document(email).delete()
                                 .addOnSuccessListener {
                                     Toast.makeText(context, "La compte s'ha eliminat correctament!", Toast.LENGTH_SHORT).show()
-                                    // Redirige al usuario a la primera pantalla de la app
                                     val intent = Intent(context, AuthActivity::class.java)
                                     intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
                                     context.startActivity(intent)
@@ -143,8 +141,6 @@ class Repository {
                             Toast.makeText(context, "La contrasenya antiga no és vàlida.", Toast.LENGTH_SHORT).show()
                         }
                     }
-            } else {
-                Toast.makeText(context, "Aquest no és el teu compte!", Toast.LENGTH_SHORT).show()
             }
         }
 
