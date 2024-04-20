@@ -33,7 +33,7 @@ class Repository {
                         val userData = hashMapOf(
                             "name" to name,
                             "email" to email,
-                            "age" to 0
+                            "age" to " "
                         )
 
                         // Establece los datos del usuario en el documento con el ID como el correo electrónico
